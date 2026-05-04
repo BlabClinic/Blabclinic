@@ -3,106 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLAB CLINIC | 專業輪廓美學</title>
+    <title>BLAB CLINIC | 韓式美學中心</title>
     <style>
-        :root {
-            --rose-bg: #fdf5f4;
-            --deep-rose: #d6a3a7;
-            --gold: #c5a059;
-            --text: #4a4a4a;
-        }
-
-        body { font-family: "PingFang HK", sans-serif; margin: 0; background-color: var(--rose-bg); color: var(--text); line-height: 1.8; }
-
-        /* 1. 頂部全螢幕廣告圖區域 */
-        .hero-poster {
-            width: 100%;
-            height: 90vh; /* 佔據螢幕 90% 高度 */
-            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('main_poster.jpg'); 
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-        .hero-poster h1 { font-size: 2.5em; letter-spacing: 8px; font-weight: 300; margin: 0; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-        .hero-poster p { font-size: 1em; letter-spacing: 3px; margin-top: 10px; opacity: 0.9; }
-
-        .container { max-width: 600px; margin: -50px auto 50px; padding: 40px 25px; background: white; border-radius: 30px; box-shadow: 0 10px 40px rgba(0,0,0,0.05); position: relative; }
-
-        /* 2. 介紹文字及成份 */
-        .section-title { color: var(--deep-rose); text-align: center; font-size: 1.4em; margin-top: 40px; position: relative; }
-        .section-title::after { content: ''; display: block; width: 30px; height: 2px; background: var(--gold); margin: 10px auto; }
-        
-        .info-card { background: #fffcfc; border: 1px solid #f1e4e5; padding: 25px; border-radius: 15px; margin: 20px 0; }
-        .info-card strong { color: var(--gold); }
-
-        /* 3. 對比圖 */
-        .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 30px 0; }
-        .comparison-grid img { width: 100%; border-radius: 12px; }
-        .label { text-align: center; font-size: 12px; color: var(--deep-rose); margin-top: 5px; }
-
-        /* 4. FAQ 問答區 */
-        .faq-item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .faq-q { font-weight: bold; color: var(--deep-rose); margin-bottom: 5px; display: flex; align-items: flex-start; }
-        .faq-q::before { content: 'Q: '; margin-right: 5px; }
-        .faq-a { font-size: 0.95em; color: #666; }
-        .faq-a::before { content: 'A: '; margin-right: 5px; font-weight: bold; }
-
-        /* WhatsApp 按鈕 */
-        .btn-whatsapp { display: block; text-align: center; background: linear-gradient(135deg, #d6a3a7, #e2b4b8); color: white; padding: 18px; text-decoration: none; border-radius: 15px; margin-top: 50px; font-weight: bold; box-shadow: 0 8px 20px rgba(214, 163, 167, 0.3); }
-
-        footer { text-align: center; padding: 40px; font-size: 0.8em; color: var(--deep-rose); opacity: 0.6; }
+        body { font-family: "PingFang HK", sans-serif; margin: 0; background-color: #fdf5f4; color: #4a4a4a; line-height: 1.8; }
+        header { background: white; padding: 60px 20px; text-align: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        h1 { color: #d6a3a7; letter-spacing: 4px; margin: 0; font-weight: 300; }
+        .container { max-width: 500px; margin: 20px auto; padding: 20px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .section { margin-bottom: 40px; padding: 15px; border-bottom: 1px solid #eee; }
+        h2 { color: #d6a3a7; border-left: 3px solid #c5a059; padding-left: 10px; font-size: 1.2em; }
+        .info-box { background: #fffcfc; padding: 15px; border-radius: 10px; font-size: 0.9em; border: 1px solid #f1e4e5; }
+        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+        .gallery img { width: 100%; border-radius: 8px; background: #eee; }
+        .label { text-align: center; font-size: 10px; color: #d6a3a7; }
+        .faq { font-size: 0.85em; background: #f9f9f9; padding: 15px; border-radius: 10px; }
+        .faq b { color: #d6a3a7; }
+        .btn-whatsapp { display: block; text-align: center; background: #d6a3a7; color: white; padding: 15px; text-decoration: none; border-radius: 15px; margin-top: 30px; font-weight: bold; }
     </style>
 </head>
 <body>
 
-<div class="hero-poster">
+<header>
     <h1>BLAB CLINIC</h1>
-    <p>Premium Facial Artistry</p>
-</div>
+    <p style="color:#c5a059; font-size: 0.8em; letter-spacing: 2px;">PREMIUM AESTHETIC</p>
+</header>
 
 <div class="container">
-    <div class="section-title">極致輪廓雕塑介紹</div>
-    <div class="info-card">
-        <p><strong>成份說明：</strong> 採用頂級醫療級透明質酸（玻尿酸），具備極佳的高黏彈性與支撐力，能與肌膚組織自然融合。</p>
-        <p><strong>主要用途：</strong> 針對面部凹陷（蘋果肌、太陽穴）進行立體填充，並可修飾鼻型、下巴，即時提升輪廓精緻度。</p>
+    <div class="section">
+        <h2>透明質酸填充 (Filler)</h2>
+        <div class="info-box">
+            <p><b>成份：</b> 醫療級玻尿酸，具極高生物相容性。</p>
+            <p><b>用途：</b> 填充蘋果肌、鼻樑及下巴，即時修復面部凹陷。</p>
+        </div>
+        <div class="gallery">
+            <div><img src="ha_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
+            <div><img src="ha_after.jpg" alt="After"><div class="label">AFTER</div></div>
+        </div>
     </div>
 
-    <div class="section-title">真實效果對比</div>
-    <div class="comparison-grid">
-        <div><img src="ha_before.jpg" alt="Before"><div class="label">療程前 BEFORE</div></div>
-        <div><img src="ha_after.jpg" alt="After"><div class="label">療程後 AFTER</div></div>
+    <div class="section">
+        <h2>Botox 瘦面除皺</h2>
+        <div class="info-box">
+            <p><b>成份：</b> FDA 認證肉毒桿菌素。</p>
+            <p><b>用途：</b> 放鬆咀嚼肌達到瘦面效果，撫平抬頭紋、魚尾紋。</p>
+        </div>
+        <div class="gallery">
+            <div><img src="botox_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
+            <div><img src="botox_after.jpg" alt="After"><div class="label">AFTER</div></div>
+        </div>
     </div>
 
-    <div class="section-title">常見問題解答</div>
-    
-    <div class="faq-item">
-        <div class="faq-q">療程過程會痛嗎？</div>
-        <div class="faq-a">針劑通常含有減痛成份，且我們會預先進行局部舒緩處理，過程舒適感高，僅有輕微蚊叮感。</div>
+    <div class="section">
+        <h2>常見問題 FAQ</h2>
+        <div class="faq">
+            <p><b>Q: 會痛嗎？</b><br>A: 過程僅有微感，會預先做好舒緩處理。</p>
+            <p><b>Q: 幾時見效？</b><br>A: 透明質酸即時見效；Botox 約 1-2 星期效果最明顯。</p>
+        </div>
     </div>
 
-    <div class="faq-item">
-        <div class="faq-q">效果可以維持多久？</div>
-        <div class="faq-a">視乎個人代謝與所選產品，一般可維持 12-18 個月，定期保養可延長最佳效果。</div>
-    </div>
-
-    <div class="faq-item">
-        <div class="faq-q">療程後有什麼注意事項？</div>
-        <div class="faq-a">24小時內避免劇烈運動及飲酒，一星期內避免高溫場所（如桑拿、溫泉），保持局部清潔即可。</div>
-    </div>
-
-    <a href="https://api.whatsapp.com/send?phone=85261666984&text=你好，我看到網站，想諮詢關於輪廓雕塑療程，謝謝！" class="btn-whatsapp">
-        立即線上專業預約 / 諮詢
+    <a href="https://api.whatsapp.com/send?phone=85261666984&text=你好，我想諮詢醫美療程" class="btn-whatsapp">
+        立即預約 / 諮詢
     </a>
 </div>
 
-<footer>
-    &copy; 2026 BLAB CLINIC HONG KONG. <br>專業醫美・視覺美學
-</footer>
+<p style="text-align: center; color: #d6a3a7; font-size: 0.7em; padding-bottom: 30px;">&copy; 2026 BLAB CLINIC HK</p>
 
 </body>
 </html>
