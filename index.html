@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blabclinic | 韓式美學中心</title>
     <style>
-        /* 韓系配色定義 */
         :root {
-            --primary-pink: #f4dcd6;    /* 淺粉背景 */
-            --deep-rose: #d6a3a7;       /* 乾燥玫瑰色 (主色) */
-            --accent-gold: #c5a059;     /* 香檳金 (細節) */
+            --primary-pink: #f4dcd6;
+            --deep-rose: #d6a3a7;
+            --accent-gold: #c5a059;
             --soft-white: #ffffff;
             --text-grey: #555555;
         }
@@ -22,42 +21,27 @@
             line-height: 1.8;
         }
 
-        /* 高尚感 Header */
         header { 
             background-color: var(--soft-white); 
             padding: 40px 20px; 
             text-align: center; 
-            letter-spacing: 2px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.03);
         }
-        header h1 { 
-            margin: 0; 
-            font-weight: 300; 
-            color: var(--deep-rose); 
-            font-size: 1.8em; 
-        }
+        header h1 { margin: 0; font-weight: 300; color: var(--deep-rose); font-size: 1.8em; letter-spacing: 2px; }
         header p { font-size: 0.8em; color: var(--accent-gold); margin-top: 5px; text-transform: uppercase; }
 
-        /* 導覽列：簡約線條感 */
         nav { 
             display: flex; 
             justify-content: center; 
-            background: rgba(255, 255, 255, 0.8); 
-            backdrop-filter: blur(5px);
+            background: rgba(255, 255, 255, 0.9); 
             padding: 15px; 
             gap: 30px; 
             position: sticky; 
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid var(--primary-pink);
         }
-        nav a { 
-            text-decoration: none; 
-            color: var(--text-grey); 
-            font-size: 0.95em;
-            transition: 0.3s;
-            cursor: pointer;
-        }
-        nav a:hover { color: var(--deep-rose); }
+        nav a { text-decoration: none; color: var(--text-grey); font-size: 0.95em; cursor: pointer; }
 
         .container { 
             max-width: 600px; 
@@ -69,56 +53,22 @@
         }
 
         .content-section { display: none; }
-        .active { display: block; animation: fadeIn 0.8s; }
+        .active { display: block; }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        h2 { font-weight: 400; color: var(--deep-rose); text-align: center; margin-bottom: 25px; }
 
-        h2 { 
-            font-weight: 400; 
-            color: var(--deep-rose); 
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        /* 專業內容盒 */
         .info-box { 
             border: 1px solid var(--primary-pink);
             padding: 20px; 
             border-radius: 12px; 
             margin-bottom: 25px;
-            font-size: 0.95em;
-        }
-        .info-box strong { color: var(--accent-gold); }
-
-        /* 韓系拼貼效果圖 */
-        .gallery { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 10px; 
-        }
-        .gallery-item { position: relative; }
-        .gallery img { 
-            width: 100%; 
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            border-radius: 15px;
-            filter: brightness(0.98);
-        }
-        .label {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            background: rgba(255,255,255,0.8);
-            padding: 2px 8px;
-            font-size: 10px;
-            border-radius: 5px;
-            color: var(--deep-rose);
+            background-color: #fffaf9;
         }
 
-        /* WhatsApp 韓系按鈕 */
+        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .gallery img { width: 100%; border-radius: 10px; border: 1px solid #f0f0f0; }
+        .label { text-align: center; font-size: 11px; color: var(--deep-rose); margin-top: 5px; }
+
         .btn-whatsapp { 
             display: block; 
             text-align: center; 
@@ -128,12 +78,10 @@
             text-decoration: none; 
             border-radius: 12px; 
             margin-top: 40px; 
-            font-weight: 400;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(214, 163, 167, 0.4);
+            font-weight: bold;
         }
-
-        footer { text-align: center; padding: 40px; font-size: 0.7em; color: var(--deep-rose); opacity: 0.6; }
+        
+        footer { text-align: center; padding: 30px; font-size: 0.7em; color: var(--deep-rose); }
     </style>
 </head>
 <body>
@@ -144,27 +92,21 @@
 </header>
 
 <nav>
-    <a onclick="showPage('ha')">Filler</a>
-    <a onclick="showPage('botox')">Botox</a>
+    <a onclick="showPage('ha')">透明質酸 (Filler)</a>
+    <a onclick="showPage('botox')">保妥適 (Botox)</a>
 </nav>
 
 <div class="container">
-    <!-- 透明質酸 (HA) -->
+    <!-- 透明質酸 -->
     <div id="ha" class="content-section active">
         <h2>透明質酸填充</h2>
         <div class="info-box">
-            <p><strong>成份：</strong> 採用高純度醫療級透明質酸，與人體組織高度相容。</p>
-            <p><strong>用途：</strong> 針對面部凹陷進行填充，塑造精緻立體輪廓，同時深層鎖水，改善皮膚質感。</p>
+            <p><strong>成份：</strong> 採用與人體高度相容的醫療級透明質酸。</p>
+            <p><strong>用途：</strong> 針對面部凹陷（如法令紋）進行填充，塑造精緻輪廓。</p>
         </div>
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="ha_before.jpg" alt="Before">
-                <div class="label">BEFORE</div>
-            </div>
-            <div class="gallery-item">
-                <img src="ha_after.jpg" alt="After">
-                <div class="label">AFTER</div>
-            </div>
+            <div><img src="ha_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
+            <div><img src="ha_after.jpg" alt="After"><div class="label">AFTER</div></div>
         </div>
     </div>
 
@@ -172,26 +114,19 @@
     <div id="botox" class="content-section">
         <h2>肉毒桿菌素瘦面</h2>
         <div class="info-box">
-            <p><strong>成份：</strong> 精準放鬆過度活躍肌肉，達到柔和輪廓線條的效果。</p>
-            <p><strong>用途：</strong> 改善咀嚼肌肥大、撫平動態皺紋（抬頭紋、魚尾紋），實現緊緻V面。</p>
+            <p><strong>成份：</strong> 精準放鬆過度活躍肌肉，實現緊緻 V 面。</p>
+            <p><strong>用途：</strong> 改善咀嚼肌肥大、撫平抬頭紋及魚尾紋等動態皺紋。</p>
         </div>
         <div class="gallery">
-            <div class="gallery-item">
-                <img src="botox_before.jpg" alt="Before">
-                <div class="label">BEFORE</div>
-            </div>
-            <div class="gallery-item">
-                <img src="botox_after.jpg" alt="After">
-                <div class="label">AFTER</div>
-            </div>
+            <div><img src="botox_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
+            <div><img src="botox_after.jpg" alt="After"><div class="label">AFTER</div></div>
         </div>
     </div>
 
-    <!-- 更新後的 WhatsApp 按鈕 -->
-<a href="https://wa.me/85261666984?text=你好，我想諮詢關於透明質酸/Botox嘅療程，謝謝！" class="btn-whatsapp">
-    線上專業諮詢 / 預約
-</a>
-
+    <!-- 已填好你的電話 -->
+    <a href="https://wa.me/85261666984?text=你好，我想諮詢關於透明質酸/Botox嘅療程，謝謝！" class="btn-whatsapp">
+        線上專業諮詢 / 預約
+    </a>
 </div>
 
 <footer>
@@ -202,7 +137,7 @@
     function showPage(pageId) {
         document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
         document.getElementById(pageId).classList.add('active');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo(0, 0);
     }
 </script>
 
