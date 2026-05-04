@@ -3,92 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blabclinic | 韓式美學中心</title>
+    <title>BLAB CLINIC | 韓式美學中心</title>
     <style>
         :root {
-            --primary-pink: #f4dcd6;
-            --deep-rose: #d6a3a7;
-            --accent-gold: #c5a059;
-            --soft-white: #ffffff;
-            --text-grey: #555555;
+            --primary-pink: #fdf5f4;    /* 極淺粉色背景 */
+            --rose-gold: #d6a3a7;       /* 玫瑰金主色 */
+            --champagne: #c5a059;       /* 香檳金點綴 */
+            --text-dark: #4a4a4a;       /* 深灰文字 */
+            --white: #ffffff;
         }
 
         body { 
-            font-family: "PingFang HK", "Noto Sans TC", sans-serif; 
+            font-family: "PingFang HK", "Helvetica Neue", sans-serif; 
             margin: 0; 
             background-color: var(--primary-pink); 
-            color: var(--text-grey); 
+            color: var(--text-dark); 
             line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
         }
 
+        /* 標題欄 */
         header { 
-            background-color: var(--soft-white); 
-            padding: 40px 20px; 
+            background-color: var(--white); 
+            padding: 50px 20px; 
             text-align: center; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(214, 163, 167, 0.1);
         }
-        header h1 { margin: 0; font-weight: 300; color: var(--deep-rose); font-size: 1.8em; letter-spacing: 2px; }
-        header p { font-size: 0.8em; color: var(--accent-gold); margin-top: 5px; text-transform: uppercase; }
+        header h1 { 
+            margin: 0; 
+            font-weight: 300; 
+            color: var(--rose-gold); 
+            font-size: 2em; 
+            letter-spacing: 4px;
+            text-transform: uppercase;
+        }
+        header p { font-size: 0.85em; color: var(--champagne); margin-top: 8px; letter-spacing: 2px; }
 
+        /* 導覽列 */
         nav { 
             display: flex; 
             justify-content: center; 
-            background: rgba(255, 255, 255, 0.9); 
-            padding: 15px; 
-            gap: 30px; 
+            background: rgba(255, 255, 255, 0.95); 
+            padding: 18px; 
+            gap: 40px; 
             position: sticky; 
             top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--primary-pink);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(214, 163, 167, 0.2);
         }
-        nav a { text-decoration: none; color: var(--text-grey); font-size: 0.95em; cursor: pointer; }
+        nav a { 
+            text-decoration: none; 
+            color: var(--text-dark); 
+            font-size: 0.9em; 
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 500;
+        }
+        nav a:hover { color: var(--rose-gold); }
 
+        /* 主容器 */
         .container { 
-            max-width: 600px; 
-            margin: 30px auto; 
-            padding: 25px; 
-            background: var(--soft-white); 
-            border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(214, 163, 167, 0.2); 
+            max-width: 550px; 
+            margin: 40px auto; 
+            padding: 30px; 
+            background: var(--white); 
+            border-radius: 25px; 
+            box-shadow: 0 15px 35px rgba(214, 163, 167, 0.15); 
         }
 
         .content-section { display: none; }
-        .active { display: block; }
+        .active { display: block; animation: fadeInUp 0.6s ease-out; }
 
-        h2 { font-weight: 400; color: var(--deep-rose); text-align: center; margin-bottom: 25px; }
-
-        .info-box { 
-            border: 1px solid var(--primary-pink);
-            padding: 20px; 
-            border-radius: 12px; 
-            margin-bottom: 25px;
-            background-color: #fffaf9;
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .gallery img { width: 100%; border-radius: 10px; border: 1px solid #f0f0f0; }
-        .label { text-align: center; font-size: 11px; color: var(--deep-rose); margin-top: 5px; }
+        h2 { font-weight: 400; color: var(--rose-gold); text-align: center; margin-bottom: 30px; font-size: 1.4em; }
 
+        .info-box { 
+            border: 1px solid #f1e4e5;
+            padding: 22px; 
+            border-radius: 15px; 
+            margin-bottom: 30px;
+            background-color: #fffcfc;
+            font-size: 0.95em;
+        }
+        .info-box strong { color: var(--champagne); }
+
+        /* 對比圖 */
+        .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .gallery img { 
+            width: 100%; 
+            border-radius: 12px; 
+            background-color: #eee;
+            display: block;
+        }
+        .label { text-align: center; font-size: 11px; color: var(--rose-gold); margin-top: 8px; letter-spacing: 1px; }
+
+        /* WhatsApp 按鈕 */
         .btn-whatsapp { 
             display: block; 
             text-align: center; 
-            background-color: var(--deep-rose); 
+            background: linear-gradient(135deg, #d6a3a7, #e2b4b8);
             color: white; 
-            padding: 15px; 
+            padding: 18px; 
             text-decoration: none; 
-            border-radius: 12px; 
-            margin-top: 40px; 
-            font-weight: bold;
+            border-radius: 15px; 
+            margin-top: 45px; 
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 8px 20px rgba(214, 163, 167, 0.3);
+            transition: 0.3s;
         }
+        .btn-whatsapp:active { transform: scale(0.98); }
         
-        footer { text-align: center; padding: 30px; font-size: 0.7em; color: var(--deep-rose); }
+        footer { text-align: center; padding: 40px; font-size: 0.75em; color: var(--rose-gold); opacity: 0.7; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>BLAB CLINIC</h1>
-    <p>Premium Medical Aesthetic</p>
+    <p>Premium Aesthetic Artistry</p>
 </header>
 
 <nav>
@@ -97,12 +134,11 @@
 </nav>
 
 <div class="container">
-    <!-- 透明質酸 -->
     <div id="ha" class="content-section active">
-        <h2>透明質酸填充</h2>
+        <h2>透明質酸輪廓填充</h2>
         <div class="info-box">
-            <p><strong>成份：</strong> 採用與人體高度相容的醫療級透明質酸。</p>
-            <p><strong>用途：</strong> 針對面部凹陷（如法令紋）進行填充，塑造精緻輪廓。</p>
+            <p><strong>成份：</strong> 高純度玻尿酸，具備絕佳的支持力與親水性。</p>
+            <p><strong>用途：</strong> 填補面部凹陷、修飾鼻型與下巴，實現即時提拉與澎潤感。</p>
         </div>
         <div class="gallery">
             <div><img src="ha_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
@@ -110,12 +146,11 @@
         </div>
     </div>
 
-    <!-- Botox -->
     <div id="botox" class="content-section">
-        <h2>肉毒桿菌素瘦面</h2>
+        <h2>BOTOX 瘦面除皺</h2>
         <div class="info-box">
-            <p><strong>成份：</strong> 精準放鬆過度活躍肌肉，實現緊緻 V 面。</p>
-            <p><strong>用途：</strong> 改善咀嚼肌肥大、撫平抬頭紋及魚尾紋等動態皺紋。</p>
+            <p><strong>成份：</strong> 獲得 FDA 認證的肉毒桿菌素，精準作用於肌肉。</p>
+            <p><strong>用途：</strong> 撫平抬頭紋、魚尾紋，放鬆咀嚼肌以達到瘦面效果。</p>
         </div>
         <div class="gallery">
             <div><img src="botox_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
@@ -123,21 +158,26 @@
         </div>
     </div>
 
-    <!-- 已填好你的電話 -->
-    <a href="https://wa.me/85261666984?text=你好，我想諮詢關於透明質酸/Botox嘅療程，謝謝！" class="btn-whatsapp">
+    <a href="https://api.whatsapp.com/send?phone=85261666984&text=你好，我看到網站，想諮詢關於透明質酸/Botox嘅療程，謝謝！" class="btn-whatsapp">
         線上專業諮詢 / 預約
     </a>
 </div>
 
 <footer>
-    &copy; 2026 BLABCLINIC HONG KONG. All Rights Reserved.
+    &copy; 2026 BLAB CLINIC HONG KONG. All Rights Reserved.
 </footer>
 
 <script>
     function showPage(pageId) {
-        document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
-        document.getElementById(pageId).classList.add('active');
-        window.scrollTo(0, 0);
+        // 切換顯示
+        var sections = document.getElementsByClassName('content-section');
+        for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+        }
+        document.getElementById(pageId).style.display = 'block';
+        
+        // 視覺平滑滾動返上去
+        window.scrollTo({top: 0, behavior: 'smooth'});
     }
 </script>
 
