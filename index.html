@@ -3,54 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLAB CLINIC | 韓式美學中心</title>
+    <title>BLAB CLINIC | 專業醫美</title>
     <style>
-        :root {
-            --primary-pink: #fdf5f4;
-            --rose-gold: #d6a3a7;
-            --text-dark: #4a4a4a;
-        }
-
-        body { font-family: "PingFang HK", sans-serif; margin: 0; background-color: var(--primary-pink); color: var(--text-dark); line-height: 1.6; }
-        header { background: white; padding: 40px 20px; text-align: center; }
-        header h1 { margin: 0; color: var(--rose-gold); letter-spacing: 4px; font-weight: 300; }
-
-        /* 分頁導覽列 */
-        nav { 
-            display: flex; justify-content: center; background: white; padding: 15px 0; 
-            position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #eee; gap: 25px;
-        }
-        nav a { 
-            text-decoration: none; color: var(--text-dark); font-weight: 500; cursor: pointer; 
-            font-size: 0.9em; padding-bottom: 5px;
-        }
-        nav a.active-link { color: var(--rose-gold); border-bottom: 2px solid var(--rose-gold); }
-
-        .content-section { display: none; padding-bottom: 50px; }
+        :root { --pink: #fdf5f4; --rose: #d6a3a7; --dark: #4a4a4a; }
+        body { font-family: "PingFang HK", sans-serif; margin: 0; background: var(--pink); color: var(--dark); line-height: 1.6; }
+        header { background: white; padding: 25px; text-align: center; border-bottom: 1px solid #eee; }
+        header h1 { margin: 0; color: var(--rose); letter-spacing: 3px; font-weight: 300; font-size: 1.4em; }
+        nav { display: flex; justify-content: center; background: white; padding: 12px 0; position: sticky; top: 0; z-index: 100; gap: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+        nav a { text-decoration: none; color: var(--dark); font-size: 0.85em; cursor: pointer; padding: 5px 10px; border-bottom: 2px solid transparent; }
+        nav a.active { color: var(--rose); border-bottom: 2px solid var(--rose); font-weight: bold; }
+        .section { display: none; padding: 15px; max-width: 480px; margin: 0 auto; animation: fadeIn 0.4s; }
         .active-section { display: block; }
-
-        .poster {
-            width: 100%; height: 250px; background-size: cover; background-position: center;
-            display: flex; align-items: center; justify-content: center; color: white;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2); font-size: 1.5em; letter-spacing: 3px;
-        }
-
-        .container { max-width: 500px; margin: -30px auto 0; padding: 30px; background: white; border-radius: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h2 { color: var(--rose-gold); font-weight: 400; text-align: center; margin-bottom: 20px; }
-        
-        .info-card { background: #fffcfc; border: 1px solid #f1e4e5; padding: 20px; border-radius: 15px; margin-bottom: 25px; font-size: 0.9em; }
-        .full-img { width: 100%; border-radius: 15px; margin: 15px 0; border: 1px solid #eee; }
-
-        .faq-section { background: #fdfafb; padding: 20px; border-radius: 20px; margin-top: 20px; border: 1px solid #f9ecee; }
-        .faq-item { margin-bottom: 15px; font-size: 0.85em; }
-        .faq-q { color: var(--rose-gold); font-weight: bold; margin-bottom: 4px; display: block; }
-        .faq-a { color: #666; display: block; }
-
-        .btn-whatsapp { 
-            display: block; text-align: center; background: #d6a3a7; color: white; 
-            padding: 18px; text-decoration: none; border-radius: 15px; margin-top: 35px; font-weight: bold; 
-        }
-        footer { text-align: center; padding: 40px; font-size: 0.7em; color: var(--rose-gold); }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .card { background: white; border-radius: 18px; padding: 20px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-top: 10px; }
+        h2 { color: var(--rose); text-align: center; font-weight: 400; margin-top: 0; font-size: 1.2em; }
+        .main-img { width: 100%; border-radius: 12px; margin: 15px 0; display: block; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .faq-box { background: #fffcfc; border-radius: 15px; padding: 15px; border: 1px solid #f9ecee; margin-top: 20px; }
+        .faq-item { margin-bottom: 12px; font-size: 0.85em; }
+        .q { color: var(--rose); font-weight: bold; display: block; margin-bottom: 2px; }
+        .a { color: #666; display: block; }
+        .whatsapp-btn { display: block; text-align: center; background: var(--rose); color: white; padding: 15px; text-decoration: none; border-radius: 12px; margin-top: 25px; font-weight: bold; font-size: 0.95em; }
+        footer { text-align: center; padding: 30px; font-size: 0.7em; color: var(--rose); }
     </style>
 </head>
 <body>
@@ -58,66 +31,52 @@
 <header><h1>BLAB CLINIC</h1></header>
 
 <nav>
-    <a id="link-ha" onclick="showPage('ha')" class="active-link">透明質酸</a>
-    <a id="link-botox" onclick="showPage('botox')">Botox 瘦面</a>
-    <a id="link-fat" onclick="showPage('fat')">溶脂塑形</a>
+    <a id="btn-ha" onclick="show('ha')" class="active">透明質酸</a>
+    <a id="btn-botox" onclick="show('botox')">Botox 瘦面</a>
+    <a id="btn-fat" onclick="show('fat')">溶脂塑形</a>
 </nav>
 
-<div id="ha" class="content-section active-section">
-    <div class="poster" style="background-image: url('ha_poster.jpg'); background-color: #e5c1c5;">輪廓填充</div>
-    <div class="container">
-        <h2>透明質酸填充</h2>
-        <div class="info-card">即時填充蘋果肌、下巴、鼻樑，重塑立體輪廓。</div>
-        <div class="faq-section">
-            <div class="faq-item"><span class="faq-q">Q: 可以維持多久？</span><span class="faq-a">A: 一般可維持 12-18 個月。</span></div>
+<div id="ha" class="section active-section">
+    <div class="card">
+        <h2>透明質酸填充 (Filler)</h2>
+        <div class="faq-box">
+            <div class="faq-item"><span class="q">成份：</span><span class="a">醫療級玻尿酸，填充效果顯著。</span></div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=85261666984&text=我想諮詢透明質酸" class="btn-whatsapp">立即預約諮詢</a>
+        <a href="https://wa.me/85261666984?text=我想諮詢透明質酸" class="whatsapp-btn">立即預約諮詢</a>
     </div>
 </div>
 
-<div id="botox" class="content-section">
-    <div class="poster" style="background-image: url('botox_poster.jpg'); background-color: #d1b8bb;">瘦面專家</div>
-    <div class="container">
+<div id="botox" class="section">
+    <div class="card">
         <h2>Botox 瘦面除皺</h2>
-        <div class="info-card">放鬆咀嚼肌達到小顏效果，撫平動態皺紋。</div>
-        <div class="faq-section">
-            <div class="faq-item"><span class="faq-q">Q: 幾時見效？</span><span class="faq-a">A: 瘦面約 2-4 星期效果最明顯。</span></div>
+        <div class="faq-box">
+            <div class="faq-item"><span class="q">Q: 幾時見效？</span><span class="a">A: 瘦面效果通常在 2-4 星期後顯現。</span></div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=85261666984&text=我想諮詢Botox瘦面" class="btn-whatsapp">立即預約諮詢</a>
+        <a href="https://wa.me/85261666984?text=我想諮詢Botox瘦面" class="whatsapp-btn">立即預約諮詢</a>
     </div>
 </div>
 
-<div id="fat" class="content-section">
-    <div class="poster" style="background-image: url('fat_poster.jpg'); background-color: #c9ada7;">溶脂塑形</div>
-    <div class="container">
-        <h2>溶脂針療程</h2>
-        <div class="info-card">針對局部贅肉（如雙下巴、腹部），精準溶解脂肪細胞並自然代謝。</div>
-        <img src="fat_melting_parts.jpg" class="full-img" alt="部位選擇">
-        <div class="faq-section">
-            <div class="faq-item"><span class="faq-q">Q: 需要做幾多次？</span><span class="faq-a">A: 一般建議 3-5 次為一個完整療程。</span></div>
-            <div class="faq-item"><span class="faq-q">Q: 打完會反彈嗎？</span><span class="faq-a">A: 溶脂是減少脂肪細胞數量，保持飲食均衡就不易反彈。</span></div>
-            <div class="faq-item"><span class="faq-q">Q: 會有修復期嗎？</span><span class="faq-a">A: 打完可能輕微痠脹，不影響日常工作社交。</span></div>
+<div id="fat" class="section">
+    <div class="card">
+        <h2>溶脂塑形療程</h2>
+        <!-- 修正後的圖片路徑 -->
+        <img src="標題.png/image_14.png" class="main-img" alt="溶脂部位選擇">
+        <div class="faq-box">
+            <div class="faq-item"><span class="q">Q: 適合部位？</span><span class="a">A: 雙下巴、腹部、拜拜肉等局部脂肪。</span></div>
+            <div class="faq-item"><span class="q">Q: 過程痛嗎？</span><span class="a">A: 只有輕微刺感，非常安全。</span></div>
         </div>
-        <a href="https://api.whatsapp.com/send?phone=85261666984&text=我想諮詢溶脂療程" class="btn-whatsapp">立即預約諮詢</a>
+        <a href="https://wa.me/85261666984?text=我想諮詢溶脂療程" class="whatsapp-btn">預約專家諮詢</a>
     </div>
 </div>
 
 <footer>&copy; 2026 BLAB CLINIC HK</footer>
 
 <script>
-    function showPage(pageId) {
-        // 切換顯示內容
-        var sections = document.getElementsByClassName('content-section');
-        for (var i = 0; i < sections.length; i++) {
-            sections[i].style.display = 'none';
-        }
-        document.getElementById(pageId).style.display = 'block';
-
-        // 切換按鈕顏色
-        var links = document.querySelectorAll('nav a');
-        links.forEach(l => l.classList.remove('active-link'));
-        document.getElementById('link-' + pageId).classList.add('active-link');
-
+    function show(id) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active-section'));
+        document.getElementById(id).classList.add('active-section');
+        document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+        document.getElementById('btn-' + id).classList.add('active');
         window.scrollTo(0, 0);
     }
 </script>
