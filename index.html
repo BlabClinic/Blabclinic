@@ -17,14 +17,16 @@
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
         .card { background: white; border-radius: 20px; padding: 25px; box-shadow: 0 5px 20px rgba(0,0,0,0.04); margin-bottom: 20px; }
         h2 { color: var(--rose); text-align: center; font-weight: 400; font-size: 1.25em; margin: 0 0 15px 0; }
-        .intro-text { font-size: 0.9em; color: #555; margin-bottom: 20px; line-height: 1.8; text-align: justify; }
-        .highlight-box { background: #fffcfc; border-radius: 15px; padding: 18px; border: 1px solid #f9ecee; margin-top: 15px; }
-        .highlight-title { color: var(--rose); font-weight: bold; font-size: 0.95em; margin-bottom: 10px; display: block; text-align: center; border-bottom: 1px dashed var(--rose); padding-bottom: 8px; }
-        ul { padding-left: 18px; margin: 0; font-size: 0.85em; color: #666; }
-        li { margin-bottom: 8px; }
-        .sub-title { color: var(--rose); font-weight: bold; font-size: 0.9em; margin-top: 12px; display: block; }
+        .intro-text { font-size: 0.9em; color: #555; margin-bottom: 15px; line-height: 1.8; }
+        .faq-box { background: #fffcfc; border-radius: 15px; padding: 18px; border: 1px solid #f9ecee; margin-top: 20px; }
+        .faq-title { text-align: center; color: var(--rose); font-weight: bold; margin-bottom: 12px; font-size: 0.95em; border-bottom: 1px dashed var(--rose); padding-bottom: 8px; }
+        .faq-item { margin-bottom: 15px; font-size: 0.85em; }
+        .q { color: var(--rose); font-weight: bold; display: block; margin-bottom: 2px; }
+        .a { color: #555; display: block; }
         .main-img { width: 100%; border-radius: 12px; margin: 15px 0; display: block; }
         .whatsapp-btn { display: block; text-align: center; background: var(--rose); color: white; padding: 15px; text-decoration: none; border-radius: 12px; margin-top: 25px; font-weight: bold; }
+        ul { padding-left: 18px; font-size: 0.85em; color: #666; }
+        li { margin-bottom: 5px; }
         footer { text-align: center; padding: 30px; font-size: 0.7em; color: var(--rose); }
     </style>
 </head>
@@ -38,55 +40,63 @@
     <a id="btn-fat" onclick="show('fat')">溶脂塑形</a>
 </nav>
 
-<!-- 1. 透明質酸 -->
+<!-- 1. 透明質酸 (保留返介紹同對答) -->
 <div id="ha" class="section active-section">
     <div class="card">
         <h2>透明質酸填充 (Filler)</h2>
-        <div class="intro-text">
-            使用醫療級玻尿酸，針對面部凹陷進行填充，即時回復飽滿少女感。
+        <div class="intro-text">使用醫療級玻尿酸，針對面部凹陷進行填充，即時回復飽滿少女感。</div>
+        <div class="faq-box">
+            <div class="faq-title">透明質酸常見問題</div>
+            <div class="faq-item"><span class="q">Q: 可以改善咩位置？</span><span class="a">A: 淚溝、蘋果肌、太陽穴、鼻樑、下巴等，亦可豐唇或填補法令紋。</span></div>
+            <div class="faq-item"><span class="q">Q: 會唔會變「膠面」？</span><span class="a">A: 只要劑量適中，效果非常自然飽滿，完全唔會影響面部表情。</span></div>
+            <div class="faq-item"><span class="q">Q: 維持幾耐？</span><span class="a">A: 一般可維持 9-18 個月，視乎產品型號及個人代謝。</span></div>
         </div>
-        <a href="https://wa.me/85261666984?text=我想諮詢透明質酸" class="whatsapp-btn">立即預約諮詢</a>
+        <a href="https://wa.me/85261666984?text=我想預約透明質酸諮詢" class="whatsapp-btn">立即預約諮詢</a>
     </div>
 </div>
 
-<!-- 2. Botox (更新內容) -->
+<!-- 2. Botox (保留新版內容 + 對答) -->
 <div id="botox" class="section">
     <div class="card">
         <h2>Botox</h2>
         <div class="intro-text">
-            Botox（保妥適）是一種肉毒桿菌素，透過阻斷神經與肌肉間的信號傳導，使肌肉放鬆。主要功效包括消除臉部動態皺紋（如魚尾紋、抬頭紋、皺眉紋）、瘦臉（放鬆咀嚼肌）、瘦小腿、肩膀線條雕塑。
+            Botox（保妥適）是一種肉毒桿菌素，透過阻斷神經與肌肉間的信號傳導，使肌肉放鬆。
+        </div>
+        
+        <div style="font-size: 0.85em; color: #666; margin-bottom: 20px;">
+            <p><strong>主要功效：</strong>消除臉部動態皺紋（如魚尾紋、抬頭紋、皺眉紋）、瘦臉（放鬆咀嚼肌）、瘦小腿、肩膀線條雕塑。</p>
+            <p><strong>除皺美容（動態紋）：</strong>放鬆抬頭紋、皺眉紋、魚尾紋、眼下細紋、鼻背紋、唇周紋等。</p>
+            <p><strong>精緻輪廓：</strong>
+                <ul>
+                    <li>瘦臉：縮小咀嚼肌，達到V臉效果。</li>
+                    <li>瘦小腿：改善腓腸肌肥大。</li>
+                    <li>瘦肩：放鬆斜方肌，打造天鵝頸。</li>
+                </ul>
+            </p>
         </div>
 
-        <div class="highlight-box">
-            <span class="highlight-title">Botox 的主要功效與應用</span>
-            
-            <span class="sub-title">除皺美容（動態紋）：</span>
-            <ul>
-                <li>放鬆因過度收縮而形成的表情紋，包括抬頭紋、皺眉紋、魚尾紋、眼下細紋、鼻背紋、唇周紋等。</li>
-            </ul>
-
-            <span class="sub-title">精緻輪廓（瘦臉與形體雕塑）：</span>
-            <ul>
-                <li><strong>瘦臉：</strong> 縮小過度發達的咀嚼肌，達到 V 臉效果。</li>
-                <li><strong>瘦小腿：</strong> 改善腓腸肌肥大，修飾蘿蔔腿。</li>
-                <li><strong>瘦肩：</strong> 放鬆斜方肌，打造天鵝頸、直角肩。</li>
-            </ul>
+        <div class="faq-box">
+            <div class="faq-title">Botox 常見問題</div>
+            <div class="faq-item"><span class="q">Q: 瘦面要打幾多次？</span><span class="a">A: 一般一次已有明顯效果。建議每 4-6 個月補打，令咀嚼肌長期變小。</span></div>
+            <div class="faq-item"><span class="q">Q: 會唔會僵硬？</span><span class="a">A: 專業劑量控制下效果非常自然，唔會影響表情。</span></div>
         </div>
-
-        <a href="https://wa.me/85261666984?text=我想諮詢Botox療程" class="whatsapp-btn">立即預約諮詢</a>
+        <a href="https://wa.me/85261666984?text=我想預約Botox諮詢" class="whatsapp-btn">立即預約諮詢</a>
     </div>
 </div>
 
-<!-- 3. 溶脂 -->
+<!-- 3. 溶脂 (保留圖片、介紹同對答) -->
 <div id="fat" class="section">
     <div class="card">
         <h2>溶脂針塑形療程</h2>
+        <div class="intro-text" style="text-align: center;">針對頑固脂肪細胞，進行精準溶解並通過代謝自然排出。</div>
         <img src="body-map.png.PNG" class="main-img" alt="溶脂部位選擇">
         <p style="text-align: center; font-size: 0.8em; color: var(--rose);">精準雕塑 · 展現自然清透感</p>
-        <div class="intro-text" style="text-align: center;">
-            針對頑固脂肪細胞，進行精準溶解並通過代謝自然排出。
+        <div class="faq-box">
+            <div class="faq-title">溶脂常見問題</div>
+            <div class="faq-item"><span class="q">Q: 邊度效果最明顯？</span><span class="a">A: 雙下巴、腹部同埋「拜拜肉」呢類頑固脂肪最有效。</span></div>
+            <div class="faq-item"><span class="q">Q: 幾時見效？</span><span class="a">A: 代謝脂肪需時，通常 2-4 星期開始見到線條收緊。</span></div>
         </div>
-        <a href="https://wa.me/85261666984?text=我想諮詢溶脂針" class="whatsapp-btn">立即預約諮詢</a>
+        <a href="https://wa.me/85261666984?text=我想預約溶脂諮詢" class="whatsapp-btn">立即預約諮詢</a>
     </div>
 </div>
 
