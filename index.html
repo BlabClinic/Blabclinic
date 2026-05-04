@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLAB CLINIC | 專業醫美美學</title>
+    <title>BLAB CLINIC | 韓式美學中心</title>
     <style>
         :root {
             --primary-pink: #fdf5f4;
@@ -13,7 +13,7 @@
         }
 
         body { 
-            font-family: "PingFang HK", "Helvetica Neue", sans-serif; 
+            font-family: "PingFang HK", sans-serif; 
             margin: 0; 
             background-color: var(--primary-pink); 
             color: var(--text-dark); 
@@ -73,7 +73,7 @@
         .info-card b { color: var(--champagne); }
 
         .gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 30px; }
-        .gallery img { width: 100%; border-radius: 10px; background: #f0f0f0; }
+        .gallery img { width: 100%; border-radius: 10px; background: #f0f0f0; min-height: 150px; }
         .label { text-align: center; font-size: 10px; color: var(--rose-gold); margin-top: 5px; }
 
         .faq-section { background: #f9f9f9; padding: 20px; border-radius: 15px; margin-top: 20px; }
@@ -90,7 +90,6 @@
             border-radius: 15px; 
             margin-top: 30px; 
             font-weight: bold; 
-            box-shadow: 0 5px 15px rgba(214, 163, 167, 0.4);
         }
 
         footer { text-align: center; padding: 40px; font-size: 0.7em; color: var(--rose-gold); }
@@ -107,7 +106,6 @@
     <a id="link-botox" onclick="showPage('botox')">Botox 瘦面</a>
 </nav>
 
-<!-- 透明質酸分頁 -->
 <div id="ha" class="content-section active-section">
     <div class="poster" style="background-image: url('ha_poster.jpg'); background-color: #e5c1c5;">
         極致輪廓雕塑
@@ -115,8 +113,8 @@
     <div class="container">
         <h2>透明質酸填充介紹</h2>
         <div class="info-card">
-            <p><b>成份：</b> 採用高純度醫療級玻尿酸，具備極佳支持力。</p>
-            <p><b>功效：</b> 針對面部凹陷進行立體填充，如太陽穴、蘋果肌及下巴，打造澎潤韓式美肌。</p>
+            <p><b>成份：</b> 醫療級玻尿酸，具極高生物相容性。</p>
+            <p><b>功效：</b> 即時修復面部凹陷（蘋果肌、下巴、鼻樑），重塑韓式立體輪廓。</p>
         </div>
         <div class="gallery">
             <div><img src="ha_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
@@ -128,24 +126,23 @@
                 <div class="faq-a">A: 視乎個人代謝，一般可維持 12-18 個月。</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Q: 會不會有僵硬感？</div>
-                <div class="faq-a">A: 我們採用自然融合技術，填充後表情自然，不會僵硬。</div>
+                <div class="faq-q">Q: 療程後會紅腫嗎？</div>
+                <div class="faq-a">A: 僅有輕微微感，一般 1-2 天即可自然恢復。</div>
             </div>
         </div>
         <a href="https://api.whatsapp.com/send?phone=85261666984&text=你好，我想諮詢透明質酸療程" class="btn-whatsapp">立即線上預約</a>
     </div>
 </div>
 
-<!-- Botox 分頁 -->
 <div id="botox" class="content-section">
     <div class="poster" style="background-image: url('botox_poster.jpg'); background-color: #d1b8bb;">
         緊緻 V 面藝術
     </div>
     <div class="container">
         <h2>Botox 瘦面除皺</h2>
-        <div class="info-box info-card">
-            <p><b>成份：</b> 獲全球認證肉毒桿菌素，精準放鬆肌肉。</p>
-            <p><b>功效：</b> 針對咀嚼肌肥大、抬頭紋及魚尾紋，實現平滑緊緻的小顏效果。</p>
+        <div class="info-card">
+            <p><b>成份：</b> 獲國際認證肉毒桿菌素。</p>
+            <p><b>功效：</b> 放鬆咀嚼肌實現瘦面效果，撫平動態皺紋（抬頭紋、魚尾紋）。</p>
         </div>
         <div class="gallery">
             <div><img src="botox_before.jpg" alt="Before"><div class="label">BEFORE</div></div>
@@ -154,11 +151,11 @@
         <div class="faq-section">
             <div class="faq-item">
                 <div class="faq-q">Q: 幾時開始見效？</div>
-                <div class="faq-a">A: 除皺約 3-5 天見效，瘦面效果約在 2-4 星期最明顯。</div>
+                <div class="faq-a">A: 除皺約 3-5 天，瘦面效果約在 2-4 星期最明顯。</div>
             </div>
             <div class="faq-item">
-                <div class="faq-q">Q: 療程後需要休息嗎？</div>
-                <div class="faq-a">A: 無需恢復期，療程後可即時正常社交及化妝。</div>
+                <div class="faq-q">Q: 療程後可以化妝嗎？</div>
+                <div class="faq-a">A: 無需恢復期，療程後可即時正常化妝及社交。</div>
             </div>
         </div>
         <a href="https://api.whatsapp.com/send?phone=85261666984&text=你好，我想諮詢Botox瘦面療程" class="btn-whatsapp">立即線上預約</a>
@@ -169,15 +166,15 @@
 
 <script>
     function showPage(pageId) {
-        // 隱藏所有內容
+        // 1. 隱藏所有內容
         var sections = document.getElementsByClassName('content-section');
         for (var i = 0; i < sections.length; i++) {
             sections[i].classList.remove('active-section');
         }
-        // 顯示選中內容
+        // 2. 顯示選中內容
         document.getElementById(pageId).classList.add('active-section');
 
-        // 更新導覽列樣式
+        // 3. 更新導覽列樣式
         document.getElementById('link-ha').classList.remove('active-link');
         document.getElementById('link-botox').classList.remove('active-link');
         document.getElementById('link-' + pageId).classList.add('active-link');
